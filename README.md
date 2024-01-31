@@ -2,6 +2,15 @@
 
 Live Preview https://parrotlearn.netlify.com
 
+(assets/screen.gif)
+(assets/screen-1.png)
+(assets/screen-2.png)
+(assets/screen-3.png)
+(assets/screen-4.png)
+(assets/screen-5.png)
+(assets/screen-6.png)
+
+
 ## Overview
 
 Parrot Learn is an open-source Progressive Web App (PWA) designed to help users learn new words in multiple languages. It leverages modern web technologies such as HTML5, CSS, JavaScript, and Firebase for data storage and Authentication.
