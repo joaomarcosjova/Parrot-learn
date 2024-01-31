@@ -1,0 +1,193 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 200px;
+    background-color: #12372A;
+    color: #Fff;
+    user-select: none;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 30px auto;
+    
+}
+
+img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+input {
+    color: #432000;
+    background-color: #DCE1EB;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin: 10px 0;
+}
+
+button {
+    color: #FDFDFD;
+    background-color: #58cc02;
+    border: 0;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+}
+
+button.login {
+    background-color: #12372A;
+    color: #58cc02;
+    margin-top: 10px;
+    border-color: #58cc02;
+    border: 3px solid;
+    cursor: pointer;
+}
+
+.button-image {
+    width: 20px; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Adjust spacing between image and text */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul li {
+    font-size: 20px;
+    background-color: #FFFDF8;
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2)
+}
+
+ul li:hover {
+    background-color: #FFECC7;
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+    color: #58cc02;
+}
+h3 {
+    text-align: center;
+}
+.author {
+    text-align: center;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #58cc02;
+  }
+
+.topnav {
+    overflow: hidden;
+  }
+  
+  
+  .topnav a {
+    float: right;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .btn-back {
+    float: left;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+ /* Style for card container */
+#card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible grid layout */
+    gap: 20px; /* Adjust gap between cards as needed */
+    padding: 20px;
+    user-select: none;
+
+}
+
+/* Style for individual card */
+.card {
+    width: 200px; /* Fixed width for cards */
+    height: 120px; /* Fixed height for cards */
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    perspective: 1000px; /* Enable 3D transformations */
+}
+
+/* Style for card content */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.5s;
+}
+
+/* Style for card front */
+.front {
+    background-color: #ff9600;
+    color: #fff;
+    transform: rotateY(0deg); /* Initially facing front */
+}
+
+/* Style for card back */
+.back {
+    background-color: #58cc02;
+    color: #fff;
+    transform: rotateY(180deg); /* Initially facing back */
+}
+
+/* Style for flipped card */
+.card.flipped .front {
+    transform: rotateY(-180deg); /* Rotate the front to the back */
+}
+
+.card.flipped .back {
+    transform: rotateY(0deg); /* Rotate the back to the front */
+}

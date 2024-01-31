@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" translate="no">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <title>Parrot Learn</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/favicon/site.webmanifest">
+        <link rel="stylesheet" href="index.css">
+
+        <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- google fonts nunito -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+      <a href="index.html" class="btn-back"><b>&#11013;</b></a>
+        <div class="topnav">
+            <a href="#!"><b></b></a>
+            <a href="#!"><b></b></a>
+          </div>
+
+        <div class="container">
+            <form>
+                <div class="container">
+                  <h1>Login</h1>              
+                  <label for="email"><b>Email</b></label>
+                  <input type="email" placeholder="Enter Email" name="email" id="email" required>
+              
+                  <label for="password"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                    <br><br>
+                  <button onclick="login()"><b>Login</b></button>
+                </div>
+              
+                <div class="container signin">
+                  <h3>Don't have an account? </h3>
+                  <button onclick="window.location.href='register.html';" class="login"><b>Register</b></button>
+
+                </div>
+              </form>
+            </div>
+
+            <script type="module">
+              // Import the functions you need from the SDKs you need
+              import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+              // TODO: Add SDKs for Firebase products that you want to use
+              // https://firebase.google.com/docs/web/setup#available-libraries
+            
+              // Your web app's Firebase configuration
+              const firebaseConfig = {
+                apiKey: "AIzaSyCJCByGrEn3HVHggDs3k2FaP047opBmNFs",
+                authDomain: "auth-parrot-learn.firebaseapp.com",
+                databaseURL: "https://auth-parrot-learn-default-rtdb.firebaseio.com",
+                projectId: "auth-parrot-learn",
+                storageBucket: "auth-parrot-learn.appspot.com",
+                messagingSenderId: "934523026078",
+                appId: "1:934523026078:web:fc332c39e79a34344f198f"
+              };
+            
+              // Initialize Firebase
+              const app = initializeApp(firebaseConfig);
+            </script>
+
+    </body>
+    </html>

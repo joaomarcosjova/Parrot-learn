@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Thank You</title>
+    <style>
+        body {
+            background-color: #12372A;
+            font-family: "Nunito", sans-serif;
+            text-align: center;
+            color: #58cc02;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #logo {
+            z-index: 2;
+            position: relative;
+            width: 50px;
+        }
+
+        h1, p {
+            z-index: 2;
+            position: relative;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="assets/circle-check-regular.svg" alt="Logo" id="logo">
+
+    <h1>Account Created Successfully!</h1>
+    <p>Congratulations! Your account is active.
+      <br> Welcome to our app.</p>
+
+    <div id="redirectCountdown"></div>
+
+    <script>
+        // Countdown function for redirection
+        let countdown = 5;
+        const redirectCountdown = document.getElementById('redirectCountdown');
+
+        function updateCountdown() {
+            redirectCountdown.innerHTML = `Redirecting in ${countdown} seconds...`;
+            countdown--;
+
+            if (countdown < 0) {
+                window.location.href = '/onboarding.html';
+            } else {
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+
+        updateCountdown();
+    </script>
+</body>
+</html>
