@@ -2,10 +2,10 @@
 
 Live Preview https://parrotlearn.netlify.com
 
-![screen](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/55927e36-8495-4f7c-ac57-1f860093200f) 
 ![screen-1](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/1a9a875e-e8cd-4bca-9fb8-987db32bc7b2)
 ![screen-2](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/49d32d62-75e2-47b6-b7fa-e803ca3de8df)
 ![screen-3](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/ec482574-64ac-4c77-970c-d4a95d9bad4b)
+![screen-8](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/ac8f99d1-eb31-4694-9c66-6a3c5273a5ff)
 ![screen-4](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/4a7fe739-e801-485d-a2c4-5c5cd289e9cb)
 ![screen-5](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/b9c4b02e-087e-4d96-a2e8-5e5b5bd73264)
 ![screen-7](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/e0db8eac-4f5b-4992-9152-6b8c380355b8)
