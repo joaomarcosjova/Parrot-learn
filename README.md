@@ -1,11 +1,20 @@
-# Parrot Learn 
-
-Live Preview https://parrotlearn.netlify.com
-
+# Parrot Learn - https://parrotlearn.netlify.app
 
 ## Overview
-
 Parrot Learn is an open-source Progressive Web App (PWA) designed to help users learn new words in multiple languages. It leverages modern web technologies such as HTML5, CSS, JavaScript, and Firebase for data storage and Authentication.
+
+![screen-1](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/3f738ad9-0423-4ceb-95a2-f1fcf60a2d1b)
+![screen-2](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/9460043b-30fb-4809-8cd3-c4d5575cf15d)
+![screen-3](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/56b14337-6aab-4765-bc34-80b039a20311)
+![screen-8](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/50a68c53-956b-4404-95ea-f5bea220c67d)
+![screen-4](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/fb63ea9e-ec05-49ee-a29d-550eae5cc10d)
+![screen-5](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/d326c106-f896-4842-8852-30e371b646b0)
+![screen-7](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/68c5f6fe-886b-477a-a13e-56e11d56b535)
+![screen-6](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/f4b10958-da4e-40ff-b62a-0b841fef65dc)
+
+## User Flow-CHart
+
+![user flowchart](https://github.com/joaomarcosjova/Parrot-learn/assets/89745621/f5e5147a-2d53-48c6-b008-b6a1f7d52787)
 
 
 ## Features
@@ -79,8 +88,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-Parrot Learn was created with love by [JOAO MARCOS JOVA].
-Find the here: 
+Parrot Learn was created with love by **JOAO MARCOS JOVA**.
 
 Linkedin - https://www.linkedin.com/in/joaomarcosjova/
 
