@@ -5,9 +5,10 @@ html, body {
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 200px;
-    background-color: #12372A;
-    color: #Fff;
+    background-color: #F7DCB9;
+    color: #333;
     user-select: none;
+    /* background-image: url('/assets/background.png'); */
 }
 
 
@@ -37,8 +38,8 @@ input {
 }
 
 button {
-    color: #FDFDFD;
-    background-color: #58cc02;
+    color: transparent;
+    background-color: transparent;
     border: 0;
     padding: 15px;
     border-radius: 12px;
@@ -48,12 +49,8 @@ button {
     font-family: "Nunito", sans-serif;
 }
 
-button.login {
-    background-color: #12372A;
-    color: #58cc02;
-    margin-top: 10px;
-    border-color: #58cc02;
-    border: 3px solid;
+button.login .quit {
+   
     cursor: pointer;
 }
 
@@ -88,7 +85,7 @@ ul li:hover {
 
 h1{
     text-align: center;
-    color: #58cc02;
+    color: #333;
 }
 h3 {
     text-align: center;
@@ -104,22 +101,15 @@ h3 {
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
-    color: #58cc02;
+    color: #00215E;
   }
 
-.topnav {
-    overflow: hidden;
-  }
-  
-  
-  .topnav a {
-    float: right;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+  .topnav {
+    display: flex;
+    flex-direction: column; /* Display items in a column */
+    align-items: flex-end; /* Align items to the right */
+}
+
   .btn-back {
     float: left;
     color: #fff;
@@ -190,5 +180,30 @@ h3 {
 
 .card.flipped .back {
     transform: rotateY(0deg); /* Rotate the back to the front */
+}
+
+
+@media (max-width: 768px) {
+    body {
+        overflow: hidden; /* Prevent scrolling */
+    }
+
+    button {
+        bottom: 10px; /* Adjust button position for smaller screens */
+    }
+
+    form {
+        max-width: 300px; /* Adjust maximum width for smaller screens */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        margin-bottom: 15px; /* Reduce space between form fields for smaller screens */
+    }
+
+    button {
+        margin-top: 15px; /* Add space above the button for smaller screens */
+    }
 }
 

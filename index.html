@@ -23,17 +23,38 @@
 
     </head>
     <body>
+        <nav>
+            <div class="topnav">
+                <button > <img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"> </button>
+                <button onclick="toggleMute()"> <img src="assets/btn/button_music_on.png" style="height: 45px; width: 45px;"> </button>
+                <button onclick="togglePlayback()">  <img src="assets/btn/button_sound_off.png" style="height: 45px; width: 45px;"> </button>
+              </div>
+        </nav>
+
+        <audio id="myAudio" autoplay loop>
+            <source src="assets/audio/game-start.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <audio id="clickSound">
+            <source src="assets/audio/correct-answer.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        
+
         <div class="container">
-            <img src="assets/parrot.png">
+            <img src="assets/boy.svg">
                 <h1>Parrot Learn</h1>
-                <br><br><br>
-                <h3>The free, fun and effective way to learn a language.</h3>
-                <br><br><br><br><br><br>
-                <button onclick="window.location.href='getting-started.html';"><b>GET STARTED</b></button>
-                <button onclick="window.location.href='login.html';" class="login"><b>I WANT AN ACCOUNT</b></button>
+           
+                <h2 id="typing-text"> Are you ready to put your knowledge to the test with Parrot Learn?</h2>
+          
+                <button onclick="playSoundAndRedirect()"> <img src="assets/btn/button_start.png"> </button>
             </div>
             
+            <script src="assets/js/audio.js"></script>
+            <script src="assets/js/index.js"></script>
 
+            
 
     </body>
     </html>
