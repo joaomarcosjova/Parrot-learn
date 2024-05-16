@@ -21,11 +21,26 @@
 
     </head>
     <body>
+       
+
         <button onclick="window.location.href = 'index.html';" class="btn-back"><img src="assets/btn/button_left.png" style="height: 45px; width: 45px;"></button>
         <div class="topnav">
             <button onclick="window.location.href = 'about.html';"><img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"></button>
-            <!-- <button href="#!"><img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"></button> -->
-          </div>
+            <button onclick="toggleMute()"> <img src="assets/btn/button_music_on.png" style="height: 45px; width: 45px;"> </button>
+            <button onclick="togglePlayback()">  <img src="assets/btn/button_sound_off.png" style="height: 45px; width: 45px;"> </button>          </div>
+
+          <audio id="goodnessOfGod" autoplay loop>
+            <source src="assets/audio/goodness-of-God-piano.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+          <div id="score">
+            <span>Score:</span>
+            <span id="pointValue">0</span>
+        </div>
+        <div id="question"></div>
+        <div id="card-container"></div>
+        <div id="timer">Time Left: <span id="time">60</span> seconds</div>
 
         <div class="container">
             <h5 id="question"> </h5>   
@@ -35,5 +50,6 @@
 
         </div>
         <script src="assets/js/game.js" type="module"></script>
+        <script src="assets/js/audio.js" type="module"></script>
     </body>
 </html>

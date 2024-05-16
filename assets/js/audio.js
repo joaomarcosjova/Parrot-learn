@@ -12,6 +12,20 @@ function togglePlayback() {
     }
 }
 
+var audio = document.getElementById("goodnessOfGod");
+
+function toggleMuteGameAudio() {
+    audio.muted = !audio.muted; // Toggle the muted state
+}
+
+function togglePlaybackGameAudio() {
+    if (audio.paused) {
+        audio.play(); // If paused, play the audio
+    } else {
+        audio.pause(); // If playing, pause the audio
+    }
+}
+
 function playClickSound() {
     var audio = document.getElementById("clickSound");
     audio.play();
