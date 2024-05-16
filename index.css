@@ -5,9 +5,10 @@ html, body {
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 200px;
-    background-color: #12372A;
-    color: #Fff;
+    /* background-color: #E18A5B; */
+    color: #fff ;
     user-select: none;
+    background-image: url('/assets/background.png');
 }
 
 
@@ -37,8 +38,8 @@ input {
 }
 
 button {
-    color: #FDFDFD;
-    background-color: #58cc02;
+    color: transparent;
+    background-color: transparent;
     border: 0;
     padding: 15px;
     border-radius: 12px;
@@ -108,7 +109,11 @@ h3 {
   }
 
 .topnav {
-    overflow: hidden;
+    /* overflow: hidden; */
+    margin: 20px;
+    display: flex;
+    /* flex-direction: column; Display items in a column */
+
   }
   
   
