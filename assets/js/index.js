@@ -14,3 +14,5 @@ function type() {
 }
 
 const typingInterval = setInterval(type, 50);
+
+
