@@ -21,53 +21,38 @@
 
     </head>
     <body>
-      <a href="index.html" class="btn-back"><b>&#11013;</b></a>
+      <button onclick="window.location.href = 'index.html';" class="btn-back"><img src="assets/btn/button_left.png" style="height: 45px; width: 45px;"></button>
         <div class="topnav">
-            <a href="#!"><b></b></a>
-            <a href="#!"><b></b></a>
+            <button onclick="window.location.href = 'about.html';"><img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"></button>
+            <!-- <button href="#!"><img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"></button> -->
           </div>
 
         <div class="container">
             <form>
                 <div class="container">
-                  <h1>Login</h1>              
-                  <label for="email"><b>Email</b></label>
-                  <input type="email" placeholder="Enter Email" name="email" id="email" required>
-              
-                  <label for="password"><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="password" id="password" required>
-                    <br><br>
+                  <h1>Let's Start</h1>              
+                  <!-- <label for="email"><b>Enter Your Name</b></label> -->
+                  <input type="text" placeholder="Enter Your Name" name="email" id="" required>
+
                   <button onclick="login()"><b>Login</b></button>
                 </div>
               
-                <div class="container signin">
-                  <h3>Don't have an account? </h3>
-                  <button onclick="window.location.href='register.html';" class="login"><b>Register</b></button>
 
+                <div class="container signin">
+                  <audio id="clickSound">
+                    <source src="assets/audio/correct-answer.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                  <button onclick="playSoundAndRedirect()"> <img src="assets/btn/button_select.png"> </button>
                 </div>
               </form>
+
+              <button onclick="window.location.href = 'index.html';"> <img src="assets/btn/button_quit.png"> </button>  
+
             </div>
 
-            <script type="module">
-              // Import the functions you need from the SDKs you need
-              import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-              // TODO: Add SDKs for Firebase products that you want to use
-              // https://firebase.google.com/docs/web/setup#available-libraries
-            
-              // Your web app's Firebase configuration
-              const firebaseConfig = {
-                apiKey: "AIzaSyCJCByGrEn3HVHggDs3k2FaP047opBmNFs",
-                authDomain: "auth-parrot-learn.firebaseapp.com",
-                databaseURL: "https://auth-parrot-learn-default-rtdb.firebaseio.com",
-                projectId: "auth-parrot-learn",
-                storageBucket: "auth-parrot-learn.appspot.com",
-                messagingSenderId: "934523026078",
-                appId: "1:934523026078:web:fc332c39e79a34344f198f"
-              };
-            
-              // Initialize Firebase
-              const app = initializeApp(firebaseConfig);
-            </script>
+            <script src="assets/js/audio.js"></script>
+            <script src="assets/js/index.js"></script>
 
     </body>
     </html>
