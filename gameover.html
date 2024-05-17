@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- google fonts nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <title>Game Over</title>
+</head>
+<body>
+    <nav>
+        <div class="topnav">
+            <button onclick="window.location.href = 'about.html';" > <img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"> </button>
+            <!-- <button onclick="toggleMute()"> <img src="assets/btn/button_music_on.png" style="height: 45px; width: 45px;"> </button>
+            <button onclick="togglePlayback()">  <img src="assets/btn/button_sound_off.png" style="height: 45px; width: 45px;"> </button> -->
+          </div>
+    </nav>
+
+    <h1 class="gameover">Game Over</h1>
+
+    <div class="container-score">
+        <h4>Highest Score: <span id="highestScore">0</span></h4>
+    </div>
+
+    <div class="container-score">
+    <h4>Current Score: <span id="currentScore">0</span></h4>
+</div>
+
+    <button onclick="continuePlaying()"><img src="assets/btn/button_start.png"></button>
+
+    
+
+    <script>
+        // Retrieve current score from local storage
+        let currentScore = parseInt(localStorage.getItem('points')) || 0;
+        document.getElementById('currentScore').textContent = currentScore;
+
+        // Retrieve highest score from local storage
+        let highestScore = parseInt(localStorage.getItem('highestScore')) || 0;
+
+        // Update highest score if current score is higher
+        if (currentScore > highestScore) {
+            highestScore = currentScore;
+            localStorage.setItem('highestScore', highestScore);
+        }
+
+        // Display highest score
+        document.getElementById('highestScore').textContent = highestScore;
+
+        function continuePlaying() {
+            // Reset current score to 0
+            localStorage.setItem('points', 0);
+            // Redirect user to game.html
+            window.location.href = "game.html";
+        }
+    </script>
+   
+</body>
+</html>

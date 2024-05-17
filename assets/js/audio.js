@@ -21,6 +21,7 @@ function playSoundAndRedirect() {
     var audio = document.getElementById("clickSound");
     audio.play();
     setTimeout(function() {
-        window.location.href = "./login.html"; // Replace "your-redirect-url.html" with the URL of the page you want to redirect to
+        window.location.href = "./game.html"; // Replace "your-redirect-url.html" with the URL of the page you want to redirect to
     }, audio.duration * 1000); // Redirect after the duration of the audio in milliseconds
 }
+

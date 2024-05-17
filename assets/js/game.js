@@ -121,7 +121,61 @@ const triviaQuestions = [
     { question: "What is the largest lake in Africa?", options: ["Lake Victoria", "Lake Tanganyika", "Lake Malawi"], answer: "Lake Victoria" },
 ];
 
+// Set initial time to 100 seconds
+let timeLeft = 100;
+let timerInterval;
+let points = 0;
 
+// Retrieve points from localStorage if available
+if (localStorage.getItem('points')) {
+    points = parseInt(localStorage.getItem('points'));
+    document.getElementById('pointValue').textContent = points;
+}
+
+// Function to start the timer
+function startTimer() {
+    timerInterval = setInterval(function() {
+        if (timeLeft > 0) {
+            timeLeft--; // Decrease time by 1 second
+            document.getElementById('time').textContent = timeLeft;
+        } else {
+            clearInterval(timerInterval); // Stop the timer when time is up
+            window.location.href = "gameover.html";
+        }
+    }, 2000);
+}
+
+// Function to check the answer
+function checkAnswer(isCorrect) {
+    if (isCorrect) {
+        document.getElementById('question').textContent = "Correct!";
+        points += 10; // Add 10 points for correct answer
+        localStorage.setItem('points', points); // Save points to localStorage
+        if (timeLeft + 20 <= 100) {
+            timeLeft += 20; // Add 10 seconds for correct answer if time allows
+        } else {
+            timeLeft = 100; // Set time to maximum (100 seconds) if adding 20 seconds would exceed 100
+        }
+    } else {
+        document.getElementById('question').textContent = "Wrong!";
+    }
+    document.getElementById('time').textContent = timeLeft;
+    document.getElementById('pointValue').textContent = points;
+    // Reload a new set of questions after delay
+    setTimeout(() => {
+        initializeQuiz();
+    }, 1500);
+}
+
+
+// Function to enable answer buttons after displaying the "Wrong!" message
+function enableButtons() {
+    const cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].disabled = false;
+        cards[i].style.pointerEvents = 'auto'; // Enable click events
+    }
+}
 
 // Function to shuffle the options
 function shuffleOptions(options) {
@@ -139,23 +193,44 @@ function generateCards(question) {
         const card = document.createElement("div");
         card.classList.add("card");
         card.textContent = option;
-        card.addEventListener("click", () => {
-            if (option === question.answer) {
-                card.style.backgroundColor = "#58cc02";
-                // Play correct sound
-                const correctSound = new Audio("assets/audio/correct-answer.mp3");
-                correctSound.play();
-                // Reload a new set of questions after delay
-                setTimeout(initializeQuiz, 1500);
-            } else {
-                card.style.backgroundColor = "red";
-                // Play incorrect sound
-                const wrongSound = new Audio("assets/audio/wrong-answer.wav");
-                wrongSound.play();
-            }
-        });
+        card.addEventListener("click", handleCardClick);
         cardContainer.appendChild(card);
     });
+}
+
+// Function to handle click event on a card
+function handleCardClick(event) {
+    const selectedAnswer = event.target.textContent;
+    const currentQuestion = getCurrentQuestion(); // Retrieve current question
+    const isCorrect = selectedAnswer === currentQuestion.answer;
+    checkAnswer(isCorrect);
+    if (isCorrect) {
+        resetCardColors(); // Reset card colors before generating new cards
+        event.target.style.backgroundColor = "#58cc02"; // Change card color to green for correct answer
+        // Play correct sound
+        const correctSound = new Audio("assets/audio/correct-answer.mp3");
+        correctSound.play();
+    } else {
+        event.target.style.backgroundColor = "red"; // Change card color to red for wrong answer
+        // Play incorrect sound
+        const wrongSound = new Audio("assets/audio/wrong-answer.wav");
+        wrongSound.play();
+        enableButtons(); // Enable buttons again after wrong answer
+    }
+}
+
+// Function to reset card colors to default
+function resetCardColors() {
+    const cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.backgroundColor = ''; // Reset card color
+    }
+}
+
+// Function to retrieve the current question
+function getCurrentQuestion() {
+    const currentQuestionText = document.getElementById('question').textContent;
+    return triviaQuestions.find(question => question.question === currentQuestionText);
 }
 
 // Function to display the question and generate cards
@@ -169,7 +244,13 @@ function displayQuestion(question) {
 function initializeQuiz() {
     const randomQuestion = triviaQuestions[Math.floor(Math.random() * triviaQuestions.length)];
     displayQuestion(randomQuestion);
+    document.getElementById('time').textContent = timeLeft;
+    startTimer(); // Start the timer
 }
 
 // Initialize the quiz when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", initializeQuiz);
+
+
+////////////////////
+
