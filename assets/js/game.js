@@ -121,8 +121,8 @@ const triviaQuestions = [
     { question: "What is the largest lake in Africa?", options: ["Lake Victoria", "Lake Tanganyika", "Lake Malawi"], answer: "Lake Victoria" },
 ];
 
-// Set initial time to 60 seconds
-let timeLeft = 60;
+// Set initial time to 100 seconds
+let timeLeft = 100;
 let timerInterval;
 let points = 0;
 
@@ -135,13 +135,14 @@ if (localStorage.getItem('points')) {
 // Function to start the timer
 function startTimer() {
     timerInterval = setInterval(function() {
-        timeLeft--;
-        document.getElementById('time').textContent = timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
+        if (timeLeft > 0) {
+            timeLeft--; // Decrease time by 1 second
+            document.getElementById('time').textContent = timeLeft;
+        } else {
+            clearInterval(timerInterval); // Stop the timer when time is up
             window.location.href = "gameover.html";
         }
-    }, 1000);
+    }, 2000);
 }
 
 // Function to check the answer
@@ -150,11 +151,13 @@ function checkAnswer(isCorrect) {
         document.getElementById('question').textContent = "Correct!";
         points += 10; // Add 10 points for correct answer
         localStorage.setItem('points', points); // Save points to localStorage
-        timeLeft += 5; // Add 5 seconds for correct answer
+        if (timeLeft + 20 <= 100) {
+            timeLeft += 20; // Add 10 seconds for correct answer if time allows
+        } else {
+            timeLeft = 100; // Set time to maximum (100 seconds) if adding 20 seconds would exceed 100
+        }
     } else {
         document.getElementById('question').textContent = "Wrong!";
-        timeLeft -= 10; // Deduct 10 seconds for wrong answer
-        if (timeLeft < 0) timeLeft = 0; // Ensure time doesn't go negative
     }
     document.getElementById('time').textContent = timeLeft;
     document.getElementById('pointValue').textContent = points;
@@ -163,6 +166,7 @@ function checkAnswer(isCorrect) {
         initializeQuiz();
     }, 1500);
 }
+
 
 // Function to enable answer buttons after displaying the "Wrong!" message
 function enableButtons() {
@@ -246,3 +250,7 @@ function initializeQuiz() {
 
 // Initialize the quiz when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", initializeQuiz);
+
+
+////////////////////
+

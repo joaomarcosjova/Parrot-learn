@@ -26,13 +26,15 @@
         <button onclick="window.location.href = 'index.html';" class="btn-back"><img src="assets/btn/button_left.png" style="height: 45px; width: 45px;"></button>
         <div class="topnav">
             <button onclick="window.location.href = 'about.html';"><img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"></button>
-            <button onclick="toggleMute()"> <img src="assets/btn/button_music_on.png" style="height: 45px; width: 45px;"> </button>
-            <button onclick="togglePlayback()">  <img src="assets/btn/button_sound_off.png" style="height: 45px; width: 45px;"> </button>          </div>
+            <!-- <button onclick="toggleMute()"> <img src="assets/btn/button_music_on.png" style="height: 45px; width: 45px;"> </button>
+            <button onclick="togglePlayback()">  <img src="assets/btn/button_sound_off.png" style="height: 45px; width: 45px;"> </button> -->    
+        </div> 
 
-          <audio id="goodnessOfGod" autoplay loop>
-            <source src="assets/audio/goodness-of-God-piano.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+            <audio id="goodnessOfGod" autoplay loop>
+                <source src="assets/audio/goodness-of-God-piano.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
 
           <div id="score">
             <span>Score:</span>
@@ -44,7 +46,6 @@
 
         <div class="container">
             <h5 id="question"> </h5>   
-            <button id="reload-button"><b>RELOAD</b></button>
             <div class="container" id="card-container">
         </div>
 

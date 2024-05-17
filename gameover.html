@@ -18,10 +18,52 @@
     <title>Game Over</title>
 </head>
 <body>
-    <img src="assets/btn/item_objects.png">
-    <img src="assets/btn/item_result_p.png">
+    <nav>
+        <div class="topnav">
+            <button onclick="window.location.href = 'about.html';" > <img src="assets/btn/button_settings.png" style="height: 45px; width: 45px;"> </button>
+            <!-- <button onclick="toggleMute()"> <img src="assets/btn/button_music_on.png" style="height: 45px; width: 45px;"> </button>
+            <button onclick="togglePlayback()">  <img src="assets/btn/button_sound_off.png" style="height: 45px; width: 45px;"> </button> -->
+          </div>
+    </nav>
+
+    <h1 class="gameover">Game Over</h1>
+
+    <div class="container-score">
+        <h4>Highest Score: <span id="highestScore">0</span></h4>
+    </div>
+
+    <div class="container-score">
+    <h4>Current Score: <span id="currentScore">0</span></h4>
+</div>
+
+    <button onclick="continuePlaying()"><img src="assets/btn/button_start.png"></button>
 
     
+
+    <script>
+        // Retrieve current score from local storage
+        let currentScore = parseInt(localStorage.getItem('points')) || 0;
+        document.getElementById('currentScore').textContent = currentScore;
+
+        // Retrieve highest score from local storage
+        let highestScore = parseInt(localStorage.getItem('highestScore')) || 0;
+
+        // Update highest score if current score is higher
+        if (currentScore > highestScore) {
+            highestScore = currentScore;
+            localStorage.setItem('highestScore', highestScore);
+        }
+
+        // Display highest score
+        document.getElementById('highestScore').textContent = highestScore;
+
+        function continuePlaying() {
+            // Reset current score to 0
+            localStorage.setItem('points', 0);
+            // Redirect user to game.html
+            window.location.href = "game.html";
+        }
+    </script>
    
 </body>
 </html>

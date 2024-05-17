@@ -8,6 +8,7 @@ html, body {
     background-color: #F7DCB9;
     color: #333;
     user-select: none;
+    overflow: hidden; /* Prevent scrolling */
     /* background-image: url('/assets/background.png'); */
 }
 
@@ -25,7 +26,7 @@ img {
     margin: 0 auto;
 }
 
-input {
+/* input {
     color: #432000;
     background-color: #DCE1EB;
     border: 0;
@@ -35,7 +36,7 @@ input {
     text-align: center;
     font-family: 'Rubik', sans-serif;
     margin: 10px 0;
-}
+} */
 
 button {
     color: transparent;
@@ -184,7 +185,7 @@ h3 {
     flex-wrap: wrap;
 }
 
-.card {
+/* .card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -196,7 +197,7 @@ h3 {
 
 .card:hover {
     background-color: #f0f0f0;
-}
+} */
 
 #timer {
     font-size: 18px;
@@ -205,11 +206,40 @@ h3 {
     margin-top: 20px;
 }
 
-  
+.container-score {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    overflow: hidden; /* Prevent overflow of text */
+    
+    /* Center text horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.gameover {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 
 @media (max-width: 768px) {
     body {
         overflow: hidden; /* Prevent scrolling */
+        user-select: none;
     }
 
     button {
