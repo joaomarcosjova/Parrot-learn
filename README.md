@@ -1,6 +1,6 @@
 # Parrot Learn 
 
-Live Preview https://parrotlearn.netlify.com
+Live Preview https://parrotlearn.netlify.app
 
 
 ## Overview
